@@ -1,0 +1,12 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: example-configmap 
+data:
+  # Configuration values can be set as key-value properties
+  database: mongodb
+  database_uri: mongodb://localhost:27017
+  system.data.name: "app-name"
+  system.data.url: "https://app-name.com"
+  system.data.type_one: "app-type-xxx"
+  system.data.value: "3"

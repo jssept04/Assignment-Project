@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: frontend
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+        app: mediawiki
+
+        tier: frontend
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: mediawiki
+
+        tier: frontend
+
+    spec:
+
+      containers:
+
+      - name: mediawiki
+
+        image: docker.io/appcontainers/mediawiki
+
+        env:
+
+        - name: GET_HOSTS_FROM
+
+          value: "dns"
+
+        resources:
+
+          requests:
+
+            cpu: 100m
+
+            memory: 100Mi
+
+        ports:
+
+        - containerPort: 80

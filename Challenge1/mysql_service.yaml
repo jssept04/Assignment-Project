@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-09-03T15:15:00Z"
+  labels:
+    app: mysqltest
+  name: mysqltest
+  namespace: default
+  resourceVersion: "72812"
+  uid: 6af96cae-dbf6-4098-9f3d-21f240991fae
+spec:
+  clusterIP: 10.98.140.170
+  clusterIPs:
+  - 10.98.140.170
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30522
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysqltest
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

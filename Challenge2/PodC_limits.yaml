@@ -1,0 +1,14 @@
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: PodC
+    image: images.my-company.example/app:v4
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "400Mi"
+        cpu: "500m"
